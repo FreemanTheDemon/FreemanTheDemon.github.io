@@ -5,15 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freeman's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
     <header>
         <a href="./index.html"><h1 id="title">
-            Benjamin Freeman Bird II_
+            Benjamin Freeman Bird II
         </h1></a>
         <nav>
             <button class="nav-btn" id="home-btn" onclick="location.href='./index.html'" type="button">
@@ -32,6 +29,17 @@
 
     <main>
 
+        <section id="contact">
+            <h2>Contact Me:</h2>
+            <form action="submit">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br>
+                <textarea id="message" name="message" rows="5" cols="46" placeholder="Enter message"></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
 
     </main>
 
@@ -39,6 +47,6 @@
         <p id="made-by">Made by: Freeman</p>
     </footer>
 
-    <script src="index.js"></script> 
+    <script src="contact.js"></script> 
 </body>
 </html>
