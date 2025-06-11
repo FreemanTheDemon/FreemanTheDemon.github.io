@@ -9,11 +9,11 @@ import {
   LoginInfo,
   UserPrompt,
   UserName,
+  PageIndicator,
   NavigationButtons,
   NavButton,
   Section,
   SectionTitle,
-  PlaceholderText,
   ProjectGrid,
   ProjectCard,
   ProjectImage,
@@ -71,6 +71,7 @@ const Home: React.FC = () => {
               <UserName>{animatedTitle}</UserName>
             </UserPrompt>
           </LeftContent>
+          <PageIndicator>Home</PageIndicator>
           <NavigationButtons>
             <Link to="/about">
               <NavButton>about</NavButton>

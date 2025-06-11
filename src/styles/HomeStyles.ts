@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const HomeContainer = styled.div`
   background-color: #0f0f0f;
@@ -22,11 +23,27 @@ export const HomeContainer = styled.div`
   }
 `;
 
-export const TerminalHeader = styled.div`
+export const TerminalHeader = styled.header`
   margin-bottom: 40px;
-  border-bottom: 2px solid #333;
+  border-bottom: 4px solid #333;
+  background: linear-gradient(90deg, #00ff00, #00ffff, #00ff00, #ffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   padding-bottom: 20px;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  /* Decorative border enhancement */
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00ff00, #00ffff, #00ff00, #ffff00);
+  }
 
   @media (max-width: 768px) {
     margin-bottom: 30px;
@@ -81,6 +98,30 @@ export const UserName = styled.span`
   text-shadow: 0 0 5px #00ff00;
 `;
 
+export const PageIndicator = styled.div`
+  position: absolute;
+  right: 20px;
+  bottom: 45px;
+  font-size: 16px;
+  color: #00ffff !important;
+  font-family: 'Courier New', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  opacity: 1 !important;
+  font-weight: bold !important;
+  background: none !important;
+  -webkit-text-fill-color: #00ffff !important;
+  text-shadow: none !important;
+
+  @media (max-width: 768px) {
+    position: static;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 14px;
+  }
+`;
+
 export const NavigationButtons = styled.div`
   display: flex;
   gap: 15px;
@@ -103,24 +144,33 @@ export const NavigationButtons = styled.div`
 
 export const NavButton = styled.button`
   background-color: #0f0f0f;
-  color: #00ff00;
+  color: #00ff00 !important;
   border: 1px solid #333;
   padding: 12px 24px;
   font-family: 'Courier New', monospace;
   font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  -webkit-text-fill-color: #00ff00;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
   &:hover {
     background-color: #00ff00;
-    color: #000;
+    color: #000 !important;
+    -webkit-text-fill-color: #000;
     border-color: #00ff00;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
   }
 
   @media (max-width: 480px) {
     padding: 10px 18px;
     font-size: 12px;
-    background-color: #1a1a1a;
   }
 `;
 
