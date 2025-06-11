@@ -1,5 +1,4 @@
 import styled, { keyframes, createGlobalStyle } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // Sunset gradient animation with more 8-bit color steps
 const sunsetGlow = keyframes`

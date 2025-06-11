@@ -1,5 +1,4 @@
 import styled, { keyframes, createGlobalStyle } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // Candlelight flickering animation (keeping this for subtle effects)
 const candleFlicker = keyframes`

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const HomeContainer = styled.div`
   background-color: #0f0f0f;
