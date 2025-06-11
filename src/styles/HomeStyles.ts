@@ -297,6 +297,87 @@ export const ProjectTech = styled.div`
   }
 `;
 
+export const ProjectLinks = styled.div`
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 8px;
+  }
+`;
+
+export const ProjectLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: #00ff00;
+  text-decoration: none;
+  border: 1px solid #555;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #00ff00;
+    color: #000;
+    border-color: #00ff00;
+  }
+
+  &:disabled {
+    background-color: #2a2a2a;
+    color: #666;
+    border-color: #444;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 10px;
+    font-size: 11px;
+    justify-content: center;
+  }
+`;
+
+export const ProjectStatus = styled.div`
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 8px;
+  font-family: 'Courier New', monospace;
+
+  &.deployed {
+    background-color: #006400;
+    color: #00ff00;
+  }
+
+  &.github-only {
+    background-color: #333;
+    color: #ffff00;
+  }
+
+  &.in-progress {
+    background-color: #ff6600;
+    color: #fff;
+  }
+`;
+
+export const ProjectMetadata = styled.div`
+  margin-top: 12px;
+  font-size: 11px;
+  color: #777;
+  font-family: 'Courier New', monospace;
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
+`;
+
 export const Footer = styled.footer`
   margin-top: 60px;
   padding-top: 30px;

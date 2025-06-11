@@ -20,6 +20,10 @@ import {
   ProjectTitle,
   ProjectDescription,
   ProjectTech,
+  ProjectLinks,
+  ProjectLink,
+  ProjectStatus,
+  ProjectMetadata,
   Footer,
   FooterText
 } from '../styles/HomeStyles';
@@ -30,34 +34,14 @@ const Home: React.FC = () => {
 
   const projects = [
     {
-      title: "Portfolio Website",
-      description: "Interactive terminal-themed portfolio built with React and TypeScript",
-      tech: "React, TypeScript, Styled-Components"
-    },
-    {
-      title: "Task Management App",
-      description: "Full-stack task manager with real-time updates and team collaboration",
-      tech: "Node.js, Express, Socket.IO, MongoDB"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Responsive weather application with geolocation and forecast data",
-      tech: "JavaScript, OpenWeather API, Chart.js"
-    },
-    {
-      title: "E-commerce Platform",
-      description: "Complete online store with payment integration and inventory management",
-      tech: "React, Node.js, Stripe API, PostgreSQL"
-    },
-    {
-      title: "Chat Application",
-      description: "Real-time messaging app with rooms and user authentication",
-      tech: "Socket.IO, React, JWT, Redis"
-    },
-    {
-      title: "Data Visualization",
-      description: "Interactive charts and analytics dashboard for business intelligence",
-      tech: "D3.js, Python, FastAPI, PostgreSQL"
+      title: "Into Egypt",
+      description: "An immersive historical adventure game built with vanilla JavaScript, featuring rich storytelling and interactive gameplay mechanics.",
+      tech: ["HTML5", "CSS3", "JavaScript"],
+      githubUrl: "https://github.com/FreemanTheDemon/into-egypt",
+      liveUrl: "https://FreemanTheDemon.github.io/into-egypt",
+      status: "deployed",
+      lastUpdated: "2024",
+      type: "Game/Interactive Story"
     }
   ];
 
@@ -149,11 +133,31 @@ const Home: React.FC = () => {
           {projects.map((project, index) => (
             <ProjectCard key={index}>
               <ProjectImage>
-                [Image Placeholder]
+                [Screenshot Coming Soon]
               </ProjectImage>
               <ProjectTitle>{project.title}</ProjectTitle>
               <ProjectDescription>{project.description}</ProjectDescription>
-              <ProjectTech>Tech: {project.tech}</ProjectTech>
+              <ProjectTech>Tech Stack: {project.tech.join(', ')}</ProjectTech>
+              <ProjectStatus className={project.status}>
+                {project.status === 'deployed' ? 'Live Demo Available' :
+                  project.status === 'github-only' ? 'Source Code Available' :
+                    'In Development'}
+              </ProjectStatus>
+              <ProjectLinks>
+                {project.githubUrl && (
+                  <ProjectLink href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    📂 View Code
+                  </ProjectLink>
+                )}
+                {project.liveUrl && (
+                  <ProjectLink href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    🌐 Live Demo
+                  </ProjectLink>
+                )}
+              </ProjectLinks>
+              <ProjectMetadata>
+                Type: {project.type} | Last Updated: {project.lastUpdated}
+              </ProjectMetadata>
             </ProjectCard>
           ))}
         </ProjectGrid>
